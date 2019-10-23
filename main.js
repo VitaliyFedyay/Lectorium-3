@@ -8,10 +8,19 @@ class Animal {
     this.drink = drink
     this.sleep = sleep
     this.walk = walk
+    
   }
 
   changeHealth() {
 
+  }
+
+  timer() {
+    let timer = 0
+    setInterval(() => {
+      timer++
+      document.getElementById('sec').innerHTML = timer
+    }, 1000);
   }
 }
 
@@ -23,6 +32,7 @@ window.onload = function () {
     if( name !== null && name !== '') {
       let tamagotchi = new Animal(name)
       document.getElementById('tamagotchiName').innerHTML = name
+      tamagotchi.timer()
       check = false
     }
     else {

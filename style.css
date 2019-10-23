@@ -16,7 +16,7 @@ body {
 
 .progressBar p progress {
   background: rgb(180, 231, 231);
-  width: 250px;
+  width: 60%;
   margin-top: 1%;
   border-radius: 5px;
 }
@@ -24,18 +24,18 @@ body {
 .button {
   position: absolute;
   left: 30%;
-  bottom: 15%;
+  bottom: 12%;
 }
 
 .button button {
   margin-left: 10px;
   border-radius: 5px;
-  width: 120px;
-  height: 30px;
+  width: 12vw;
+  height: 5vh;
   background: rgb(57, 171, 175);
   font-size: 20px;
   font-family: "Permanent Marker";
-  
+  text-align: center;
 }
 
 .button button:focus {
@@ -50,11 +50,48 @@ body {
   position: absolute;
   top: 10%;
   left: 40%;
-  width: 23%;
+  width: 25vw;
   height: auto;
 }
 
 .tamagotchiImg img {
   width: 100%;
   height: auto;
+}
+
+#information {
+  position: absolute;
+  right: 8%;
+  top: 10%;
+  background: rgb(199, 199, 199);
+  border-radius: 5px;
+  width: 20vw;
+  height: auto;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.timer {
+  position: absolute;
+  width: 15vw;
+  height:5vh;
+  left: 2%;
+  top: 4%;
+  font-size: 1.5em;
+  background: rgb(199, 199, 199);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.circle button {
+  position: absolute;
+  bottom: 8%;
+  left:4%;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  background: crimson;
+  outline: none;
+  font-size: 20px;
+  font-family: "Permanent Marker";
 }
