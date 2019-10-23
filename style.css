@@ -75,7 +75,7 @@ body {
   position: absolute;
   width: 15vw;
   height:5vh;
-  left: 2%;
+  left: 8%;
   top: 4%;
   font-size: 1.5em;
   background: rgb(199, 199, 199);
@@ -86,7 +86,7 @@ body {
 .circle button {
   position: absolute;
   bottom: 8%;
-  left:4%;
+  left:8%;
   width: 150px;
   height: 150px;
   border-radius: 75px;
