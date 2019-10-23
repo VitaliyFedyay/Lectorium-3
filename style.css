@@ -43,7 +43,7 @@ body {
 }
 
 .button button:active {
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .tamagotchiImg {
@@ -74,7 +74,7 @@ body {
 .timer {
   position: absolute;
   width: 15vw;
-  height:5vh;
+  height: 5vh;
   left: 8%;
   top: 4%;
   font-size: 1.5em;
@@ -86,7 +86,7 @@ body {
 .circle button {
   position: absolute;
   bottom: 8%;
-  left:8%;
+  left: 8%;
   width: 150px;
   height: 150px;
   border-radius: 75px;

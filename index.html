@@ -19,19 +19,19 @@
   </div>
 
   <div class="progressBar">
-    <p>health: <progress value="100" max="100"></progress></p>
-    <p>happy: <progress value="100" max="100"></progress></p>
-    <p>meals: <progress value="100" max="100"></progress></p>
-    <p>drink: <progress value="100" max="100"></progress></p>
-    <p>sleep: <progress value="100" max="100"></progress></p>
-    <p>walk: <progress value="100" max="100"></progress></p>
+    <p>health: <progress id="health" value="100" max="100" min="0"></progress></p>
+    <p>meals: <progress id="meals" value="100" max="100" min="0"></progress></p>
+    <p>drink: <progress id="drink" value="100" max="100" min="0"></progress></p>
+    <p>sleep: <progress id="sleep" value="100" max="100" min="0"></progress></p>
+    <p>walk: <progress id="walk" value="100" max="100" min="0"></progress></p>
   </div>
 
   <div class="button">
-    <button id="meals">get meals</button>
-    <button id="drink">get drink</button>
-    <button id="sleep">get sleep</button>
-    <button id="walk">get walk</button>
+    <button id="b-health" type="button">treat</button>
+    <button id="b-meals" type="button">get meals</button>
+    <button id="b-drink" type="button">get drink</button>
+    <button id="b-sleep" type="button">get sleep</button>
+    <button id="b-walk" type="button">get walk</button>
   </div>
 
   <div id="information">
@@ -49,7 +49,6 @@
     <button onclick="location.reload()">new game</button>
   </div>
 
-  
 </body>
 
 </html>
