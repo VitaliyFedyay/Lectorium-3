@@ -6,9 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <h1 id="tamagotchiName"></h1>
+
+  <div class="tamagotchiImg">
+    <img src="img/homer.png" alt="tamagotchi">
+  </div>
+
+  <div class="progressBar">
+    <p>health: <progress value="100" max="100"></progress></p>
+    <p>happy: <progress value="100" max="100"></progress></p>
+    <p>meals: <progress value="100" max="100"></progress></p>
+    <p>drink: <progress value="100" max="100"></progress></p>
+    <p>sleep: <progress value="100" max="100"></progress></p>
+    <p>walk: <progress value="100" max="100"></progress></p>
+  </div>
+
+  <div class="button">
+    <button id="meals">get meals</button>
+    <button id="drink">get drink</button>
+    <button id="sleep">get sleep</button>
+    <button id="walk">get walk</button>
+  </div>
+
   <script src="main.js"></script>
 </body>
 

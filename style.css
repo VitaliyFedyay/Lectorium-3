@@ -1,0 +1,60 @@
+body {
+  background: linear-gradient(to right, rgb(184, 49, 184), rgb(35, 48, 240));
+  font-family: "Permanent Marker";
+}
+#tamagotchiName {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.progressBar {
+  position: absolute;
+  width: 30%;
+  top: 20%;
+  left: 5%;
+}
+
+.progressBar p progress {
+  background: rgb(180, 231, 231);
+  width: 250px;
+  margin-top: 1%;
+  border-radius: 5px;
+}
+
+.button {
+  position: absolute;
+  left: 30%;
+  bottom: 15%;
+}
+
+.button button {
+  margin-left: 10px;
+  border-radius: 5px;
+  width: 120px;
+  height: 30px;
+  background: rgb(57, 171, 175);
+  font-size: 20px;
+  font-family: "Permanent Marker";
+  
+}
+
+.button button:focus {
+  outline: none;
+}
+
+.button button:active {
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.tamagotchiImg {
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  width: 23%;
+  height: auto;
+}
+
+.tamagotchiImg img {
+  width: 100%;
+  height: auto;
+}
