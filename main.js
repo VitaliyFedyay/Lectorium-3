@@ -1,28 +1,11 @@
 class Animal {
-  constructor(
-    name,
-    health,
-    meals,
-    drink,
-    sleep,
-    walk,
-    counter_health,
-    counter_meals,
-    counter_drink,
-    counter_sleep,
-    counter_walk
-  ) {
-    this.name = name
+  
+  constructor(health, meals, drink, sleep, walk) {
     this.health = health
     this.meals = meals
     this.drink = drink
     this.sleep = sleep
     this.walk = walk
-    this.counter_health = counter_health
-    this.counter_meals = counter_meals
-    this.counter_drink = counter_drink
-    this.counter_sleep = counter_sleep
-    this.counter_walk = counter_walk
   }
 
   changeHealth() {
@@ -36,7 +19,7 @@ class Animal {
     } else if (this.health == 0) {
       document.getElementById("info").innerHTML = "your tamagotchi is died!"
       tamagotchiDied()
-      clearInterval(this.counter_health)
+
     }
     document.getElementById("health").value = this.health
   }
@@ -53,7 +36,7 @@ class Animal {
     } else if (this.meals == 0) {
       document.getElementById("info").innerHTML = "your tamagotchi is died!"
       tamagotchiDied()
-      clearInterval(this.counter_meals)
+
     }
     document.getElementById("meals").value = this.meals
   }
@@ -70,7 +53,7 @@ class Animal {
     } else if (this.drink == 0) {
       document.getElementById("info").innerHTML = "your tamagotchi is died!"
       tamagotchiDied()
-      clearInterval(this.counter_drink)
+
     }
     document.getElementById("drink").value = this.drink
   }
@@ -87,7 +70,7 @@ class Animal {
     } else if (this.sleep == 0) {
       document.getElementById("info").innerHTML = "your tamagotchi is died!"
       tamagotchiDied()
-      clearInterval(this.counter_sleep)
+
     }
     document.getElementById("sleep").value = this.sleep
   }
@@ -103,7 +86,7 @@ class Animal {
     } else if (this.walk == 0) {
       document.getElementById("info").innerHTML = "your tamagotchi is died!"
       tamagotchiDied()
-      clearInterval(this.counter_walk)
+
     }
     document.getElementById("walk").value = this.walk
   }
@@ -173,13 +156,6 @@ class Animal {
     }, 1000)
   }
 
-  clicker() {
-    document.getElementById("b_health").onclick = this.getHealth;
-    document.getElementById("b_meals").onclick = this.getMeals;
-    document.getElementById("b_drink").onclick = this.getDrink;
-    document.getElementById("b_sleep").onclick = this.getSleep
-    document.getElementById("b_walk").onclick = this.getWalk
-  }
 }
 
 window.onload = function () {
@@ -187,25 +163,27 @@ window.onload = function () {
   while (check) {
     let name = prompt("Enter name of your tamagotchi: ")
     if (name !== null && name !== "") {
-      let tamagotchi = new Animal(
-        name,
-        100,
-        100,
-        100,
-        100,
-        100,
-        setInterval(this.changeHealth, 1000),
-        setInterval(this.changeMeals, 1000),
-        setInterval(this.changeDrink, 1000),
-        setInterval(this.changeSleep, 1000),
-        setInterval(this.changeWalk, 1000)
-      )
       check = false
       document.getElementById("tamagotchiName").innerHTML = name
-      tamagotchi.timer()
-      tamagotchi.clicker()
+
     } else {
       check = true
     }
   }
 }
+
+let tamagotchi = new Animal(100, 100, 100, 100, 100)
+
+tamagotchi.timer()
+
+setInterval(tamagotchi.changeHealth, 1000)
+setInterval(tamagotchi.changeMeals, 1000)
+setInterval(tamagotchi.changeDrink, 1000)
+setInterval(tamagotchi.changeSleep, 1000)
+setInterval(tamagotchi.changeWalk, 1000)
+
+document.getElementById("b_health").onclick = tamagotchi.getHealth;
+document.getElementById("b_meals").onclick = tamagotchi.getMeals;
+document.getElementById("b_drink").onclick = tamagotchi.getDrink;
+document.getElementById("b_sleep").onclick = tamagotchi.getSleep
+document.getElementById("b_walk").onclick = tamagotchi.getWalk
