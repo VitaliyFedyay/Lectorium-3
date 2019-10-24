@@ -1,5 +1,5 @@
 class Animal {
-  
+
   constructor(health, meals, drink, sleep, walk) {
     this.health = health
     this.meals = meals
@@ -10,18 +10,18 @@ class Animal {
 
   changeHealth() {
     if (this.health == 100) {
-      document.getElementById("info").innerHTML = "Your tamagotchi is health!"
-      this.health--
+      document.getElementById('info').innerHTML = "I healthy";
+      this.health--;
     } else if (this.health == 50) {
-      document.getElementById("info").innerHTML =
-        "your tamagotchi needs treatment!"
-      this.health--
+      document.getElementById('info').innerHTML = "Your tamagotchi feels bad";
+      this.health--;
     } else if (this.health == 0) {
-      document.getElementById("info").innerHTML = "your tamagotchi is died!"
       tamagotchiDied()
-
+      document.getElementById('info').innerHTML = "Your tamagotchi is died";
+    } else if (this.health !== 0) {
+      this.health--;
     }
-    document.getElementById("health").value = this.health
+    document.getElementById('health').value = this.health;
   }
 
   changeMeals() {
