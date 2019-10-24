@@ -165,14 +165,13 @@ window.onload = function () {
     if (name !== null && name !== "") {
       check = false
       document.getElementById("tamagotchiName").innerHTML = name
-
     } else {
       check = true
     }
   }
 }
 
-let tamagotchi = new Animal(100, 100, 100, 100, 100)
+const tamagotchi = new Animal(100, 100, 100, 100, 100)
 
 tamagotchi.timer()
 
