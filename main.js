@@ -109,43 +109,53 @@ class Animal {
   }
 
   getHealth() {
-    if (this.health !== 0 && this.health <= 90) {
-      document.getElementById("info").innerHTML = "your tamagotchi eating!"
-      this.health += 5
+    if (this.health <= 99 && this.health != 0) {
+      this.health += 10;
+    } else if (this.health == 0 || this.health > 100) {
+      this.health += 0;
+    } else if (this.health <= 91 && this.health <= 100) {
+      this.health += 100 - this.health;
     }
-    document.getElementById("health").value = this.health
   }
 
-  getMealth() {
-    if (this.meals !== 0 && this.meals <= 90) {
-      document.getElementById("info").innerHTML = "your tamagotchi eating!"
-      this.meals += 5
+  getMeals() {
+    if (this.meals <= 99 && this.meals != 0) {
+      this.meals += 10;
+    } else if (this.meals == 0 || this.meals > 100) {
+      this.meals += 0;
+    } else if (this.meals <= 91 && this.meals <= 100) {
+      this.meals += 100 - this.meals;
     }
-    document.getElementById("meals").value = this.meals
   }
 
   getDrink() {
-    if (this.drink !== 0 && this.drink <= 90) {
-      document.getElementById("info").innerHTML = "your tamagotchi eating!"
-      this.drink += 5
+    if (this.drink <= 99 && this.drink != 0) {
+      this.drink += 10;
+    } else if (this.drink == 0 || this.drink > 100) {
+      this.drink += 0;
+    } else if (this.drink <= 91 && this.drink <= 100) {
+      this.drink += 100 - this.drink;
     }
-    document.getElementById("drink").value = this.drink
   }
 
   getSleep() {
-    if (this.sleep !== 0 && this.sleep <= 90) {
-      document.getElementById("info").innerHTML = "your tamagotchi eating!"
-      this.sleep += 5
+    if (this.sleep <= 99 && this.sleep != 0) {
+      this.sleep += 10;
+    } else if (this.sleep == 0 || this.sleep > 100) {
+      this.sleep += 0;
+    } else if (this.sleep <= 91 && this.sleep <= 100) {
+      this.sleep += 100 - this.sleep;
     }
-    document.getElementById("sleep").value = this.sleep
   }
 
   getWalk() {
-    if (this.walk !== 0 && this.walk <= 90) {
-      document.getElementById("info").innerHTML = "your tamagotchi eating!"
-      this.walk += 5
+    if (this.walk <= 99 && this.walk != 0) {
+      this.walk += 10;
+    } else if (this.walk == 0 || this.walk > 100) {
+      this.walk += 0;
+    } else if (this.walk <= 91 && this.walk <= 100) {
+      this.walk += 100 - this.walk;
     }
-    document.getElementById("walk").value = this.walk
   }
 
   tamagotchiDied() {
@@ -162,9 +172,17 @@ class Animal {
       document.getElementById("sec").innerHTML = timer
     }, 1000)
   }
+
+  clicker() {
+    document.getElementById("b_health").onclick = this.getHealth;
+    document.getElementById("b_meals").onclick = this.getMeals;
+    document.getElementById("b_drink").onclick = this.getDrink;
+    document.getElementById("b_sleep").onclick = this.getSleep
+    document.getElementById("b_walk").onclick = this.getWalk
+  }
 }
 
-window.onload = function() {
+window.onload = function () {
   let check = true
   while (check) {
     let name = prompt("Enter name of your tamagotchi: ")
@@ -185,12 +203,7 @@ window.onload = function() {
       check = false
       document.getElementById("tamagotchiName").innerHTML = name
       tamagotchi.timer()
-
-      document.getElementById("b_health").onclick = tamagotchi.getHealth
-      document.getElementById("b_meals").onclick = tamagotchi.getMeals
-      document.getElementById("b_drink").onclick = tamagotchi.getDrink
-      document.getElementById("b_sleep").onclick = tamagotchi.getSleep
-      document.getElementById("b_walk").onclick = tamagotchi.getWalk
+      tamagotchi.clicker()
     } else {
       check = true
     }
