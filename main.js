@@ -28,6 +28,7 @@ class Animal {
     }
     else if (progress.value == 0) {
       info.innerHTML = 'Tamagotchi is died!'
+      document.getElementById('img').style.visibility = 'hidden'
     }
 
     progress.value--
@@ -46,6 +47,7 @@ class Animal {
     }
     else if (progress.value == 0) {
       info.innerHTML = 'Tamagotchi is died!'
+      document.getElementById('img').style.visibility = 'hidden'
     }
 
     progress.value--
@@ -64,6 +66,7 @@ class Animal {
     }
     else if (progress.value == 0) {
       info.innerHTML = 'Tamagotchi is died!'
+      document.getElementById('img').style.visibility = 'hidden'
     }
 
     progress.value--
@@ -82,6 +85,7 @@ class Animal {
     }
     else if (progress.value == 0) {
       info.innerHTML = 'Tamagotchi is died!'
+      document.getElementById('img').style.visibility = 'hidden'
     }
 
     progress.value--
@@ -101,6 +105,7 @@ class Animal {
     }
     else if (progress.value == 0) {
       info.innerHTML = 'Tamagotchi is died!'
+      document.getElementById('img').style.visibility = 'hidden'
     }
 
     progress.value--
@@ -164,7 +169,6 @@ class Animal {
   }
 
   timer() {
-
     let timer = 0
     setInterval(() => {
       timer++
