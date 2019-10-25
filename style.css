@@ -22,6 +22,10 @@ body {
   font-size: 2em;
 }
 
+#progerssBar {
+  visibility: visible;
+}
+
 .button {
   position: absolute;
   left: 30%;
