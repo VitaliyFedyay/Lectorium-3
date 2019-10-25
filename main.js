@@ -1,5 +1,21 @@
 class Animal {
 
+  tamagotchiDied() {
+  let progressHealth = document.getElementById('health')
+  let progressMeals = document.getElementById('meals')
+  let progressDrink = document.getElementById('drink')
+  let progressSleep = document.getElementById('sleep')
+  let progressWalk = document.getElementById('walk')
+
+  if (progressHealth.value == 0) {
+    progressMeals.value = 0
+    progressDrink.value = 0
+    progressWalk.value = 0
+    progressSleep.value = 0
+    document.getElementById('info').innerHTML = 'GAME OVER'
+  }
+}
+
   changeHealth() {
     let info = document.getElementById('info')
     let progress = document.getElementById('health')
@@ -148,16 +164,12 @@ class Animal {
   }
 
   timer() {
-    let progress = document.getElementById('health')
+
     let timer = 0
-    let controlTime = setInterval(() => {
+    setInterval(() => {
       timer++
       document.getElementById("sec").innerHTML = timer
     }, 1000)
-    if(progress.value == 0) {
-      clearInterval(controlTime)
-      return
-    }
   }
 
 }
@@ -177,7 +189,10 @@ window.onload = function () {
 
 const tamagotchi = new Animal()
 
+
 tamagotchi.timer()
+
+tamagotchi.tamagotchiDied()
 
 tamagotchi.changeHealth()
 tamagotchi.changeMeals()
@@ -190,3 +205,4 @@ document.getElementById("get-meals").onclick = tamagotchi.getMeals
 document.getElementById("get-drink").onclick = tamagotchi.getDrink
 document.getElementById("get-sleep").onclick = tamagotchi.getSleep
 document.getElementById("get-walk").onclick = tamagotchi.getWalk
+
