@@ -1,159 +1,163 @@
 class Animal {
 
-  constructor(health, meals, drink, sleep, walk) {
-    this.health = health
-    this.meals = meals
-    this.drink = drink
-    this.sleep = sleep
-    this.walk = walk
-  }
-
   changeHealth() {
-    if (this.health == 100) {
-      document.getElementById('info').innerHTML = "I healthy";
-      this.health--;
-    } else if (this.health == 50) {
-      document.getElementById('info').innerHTML = "Your tamagotchi feels bad";
-      this.health--;
-    } else if (this.health == 0) {
-      tamagotchiDied()
-      document.getElementById('info').innerHTML = "Your tamagotchi is died";
-    } else if (this.health !== 0) {
-      this.health--;
+    let info = document.getElementById('info')
+    let progress = document.getElementById('health')
+
+    if (progress.value >= progress.max) {
+      info.innerHTML = 'Tamagotchi heathy!'
     }
-    document.getElementById('health').value = this.health;
+    else if (progress.value == 50) {
+      info.innerHTML = 'Tamagotchi needs treatment!'
+    }
+    else if (progress.value == 0) {
+      info.innerHTML = 'Tamagotchi is died!'
+    }
+
+    progress.value--
+    setInterval(this.changeHealth, 1000);
   }
 
   changeMeals() {
-    if (this.meals == 100) {
-      document.getElementById("info").innerHTML =
-        "Your tamagotchi not need meals!"
-      this.meals--
-    } else if (this.meals == 50) {
-      document.getElementById("info").innerHTML =
-        "your tamagotchi needs meals!"
-      this.meals--
-    } else if (this.meals == 0) {
-      document.getElementById("info").innerHTML = "your tamagotchi is died!"
-      tamagotchiDied()
+    let info = document.getElementById('info')
+    let progress = document.getElementById('meals')
 
+    if (progress.value >= progress.max) {
+      info.innerHTML = 'Tamagotchi fed!'
     }
-    document.getElementById("meals").value = this.meals
+    else if (progress.value == 50) {
+      info.innerHTML = 'Tamagotchi needs meals!'
+    }
+    else if (progress.value == 0) {
+      info.innerHTML = 'Tamagotchi is died!'
+    }
+
+    progress.value--
+    setInterval(this.changeMeals, 1000);
   }
 
   changeDrink() {
-    if (this.drink == 100) {
-      document.getElementById("info").innerHTML =
-        "Your tamagotchi not need drink!"
-      this.drink--
-    } else if (this.drink == 50) {
-      document.getElementById("info").innerHTML =
-        "your tamagotchi needs drink!"
-      this.drink--
-    } else if (this.drink == 0) {
-      document.getElementById("info").innerHTML = "your tamagotchi is died!"
-      tamagotchiDied()
+    let info = document.getElementById('info')
+    let progress = document.getElementById('drink')
 
+    if (progress.value >= progress.max) {
+      info.innerHTML = 'Tamagotchi fed!'
     }
-    document.getElementById("drink").value = this.drink
+    else if (progress.value == 50) {
+      info.innerHTML = 'Tamagotchi needs drink!'
+    }
+    else if (progress.value == 0) {
+      info.innerHTML = 'Tamagotchi is died!'
+    }
+
+    progress.value--
+    setInterval(this.changeDrink, 1000);
   }
 
   changeSleep() {
-    if (this.sleep == 100) {
-      document.getElementById("info").innerHTML =
-        "Your tamagotchi not need sleep!"
-      this.sleep--
-    } else if (this.sleep == 50) {
-      document.getElementById("info").innerHTML =
-        "your tamagotchi needs sleep!"
-      this.sleep--
-    } else if (this.sleep == 0) {
-      document.getElementById("info").innerHTML = "your tamagotchi is died!"
-      tamagotchiDied()
+    let info = document.getElementById('info')
+    let progress = document.getElementById('sleep')
 
+    if (progress.value >= progress.max) {
+      info.innerHTML = 'Tamagotchi fed!'
     }
-    document.getElementById("sleep").value = this.sleep
+    else if (progress.value == 50) {
+      info.innerHTML = 'Tamagotchi needs sleep!'
+    }
+    else if (progress.value == 0) {
+      info.innerHTML = 'Tamagotchi is died!'
+    }
+
+    progress.value--
+    setInterval(this.changeSleep, 1000);
   }
 
-  changeWalk() {
-    if (this.walk == 100) {
-      document.getElementById("info").innerHTML =
-        "Your tamagotchi not need walk!"
-      this.walk--
-    } else if (this.walk == 50) {
-      document.getElementById("info").innerHTML = "your tamagotchi needs walk!"
-      this.walk--
-    } else if (this.walk == 0) {
-      document.getElementById("info").innerHTML = "your tamagotchi is died!"
-      tamagotchiDied()
 
+  changeWalk() {
+    let info = document.getElementById('info')
+    let progress = document.getElementById('walk')
+
+    if (progress.value >= progress.max) {
+      info.innerHTML = 'Tamagotchi fed!'
     }
-    document.getElementById("walk").value = this.walk
+    else if (progress.value == 50) {
+      info.innerHTML = 'Tamagotchi needs walk!'
+    }
+    else if (progress.value == 0) {
+      info.innerHTML = 'Tamagotchi is died!'
+    }
+
+    progress.value--
+    setInterval(this.changeWalk, 1000);
   }
 
   getHealth() {
-    if (this.health <= 99 && this.health != 0) {
-      this.health += 10;
-    } else if (this.health == 0 || this.health > 100) {
-      this.health += 0;
-    } else if (this.health <= 91 && this.health <= 100) {
-      this.health += 100 - this.health;
+    let progress = document.getElementById('health')
+    if (progress.value <= 99 && progress.value != 0) {
+      progress.value += 10;
+    } else if (progress.value == 0 || progress.value > 100) {
+      progress.value += 0;
+    } else if (progress.value <= 91 && progress.value <= 100) {
+      progress.value += 100 - progress.value;
     }
   }
 
+
   getMeals() {
-    if (this.meals <= 99 && this.meals != 0) {
-      this.meals += 10;
-    } else if (this.meals == 0 || this.meals > 100) {
-      this.meals += 0;
-    } else if (this.meals <= 91 && this.meals <= 100) {
-      this.meals += 100 - this.meals;
+    let progress = document.getElementById('meals')
+    if (progress.value <= 99 && progress.value != 0) {
+      progress.value += 10;
+    } else if (progress.value == 0 || progress.value > 100) {
+      progress.value += 0;
+    } else if (progress.value <= 91 && progress.value <= 100) {
+      progress.value += 100 - progress.value;
     }
   }
 
   getDrink() {
-    if (this.drink <= 99 && this.drink != 0) {
-      this.drink += 10;
-    } else if (this.drink == 0 || this.drink > 100) {
-      this.drink += 0;
-    } else if (this.drink <= 91 && this.drink <= 100) {
-      this.drink += 100 - this.drink;
+    let progress = document.getElementById('drink')
+    if (progress.value <= 99 && progress.value != 0) {
+      progress.value += 10;
+    } else if (progress.value == 0 || progress.value > 100) {
+      progress.value += 0;
+    } else if (progress.value <= 91 && progress.value <= 100) {
+      progress.value += 100 - progress.value;
     }
   }
 
   getSleep() {
-    if (this.sleep <= 99 && this.sleep != 0) {
-      this.sleep += 10;
-    } else if (this.sleep == 0 || this.sleep > 100) {
-      this.sleep += 0;
-    } else if (this.sleep <= 91 && this.sleep <= 100) {
-      this.sleep += 100 - this.sleep;
+    let progress = document.getElementById('sleep')
+    if (progress.value <= 99 && progress.value != 0) {
+      progress.value += 10;
+    } else if (progress.value == 0 || progress.value > 100) {
+      progress.value += 0;
+    } else if (progress.value <= 91 && progress.value <= 100) {
+      progress.value += 100 - progress.value;
     }
   }
 
   getWalk() {
-    if (this.walk <= 99 && this.walk != 0) {
-      this.walk += 10;
-    } else if (this.walk == 0 || this.walk > 100) {
-      this.walk += 0;
-    } else if (this.walk <= 91 && this.walk <= 100) {
-      this.walk += 100 - this.walk;
-    }
-  }
-
-  tamagotchiDied() {
-    if (this.health == 0) {
-      clearInterval(timer())
-      document.getElementById("info").innerHTML = "GAME OVER!"
+    let progress = document.getElementById('walk')
+    if (progress.value <= 99 && progress.value != 0) {
+      progress.value += 10;
+    } else if (progress.value == 0 || progress.value > 100) {
+      progress.value += 0;
+    } else if (progress.value <= 91 && progress.value <= 100) {
+      progress.value += 100 - progress.value;
     }
   }
 
   timer() {
+    let progress = document.getElementById('health')
     let timer = 0
-    setInterval(() => {
+    let controlTime = setInterval(() => {
       timer++
       document.getElementById("sec").innerHTML = timer
     }, 1000)
+    if(progress.value == 0) {
+      clearInterval(controlTime)
+      return
+    }
   }
 
 }
@@ -171,18 +175,18 @@ window.onload = function () {
   }
 }
 
-const tamagotchi = new Animal(100, 100, 100, 100, 100)
+const tamagotchi = new Animal()
 
 tamagotchi.timer()
 
-setInterval(tamagotchi.changeHealth, 1000)
-setInterval(tamagotchi.changeMeals, 1000)
-setInterval(tamagotchi.changeDrink, 1000)
-setInterval(tamagotchi.changeSleep, 1000)
-setInterval(tamagotchi.changeWalk, 1000)
+tamagotchi.changeHealth()
+tamagotchi.changeMeals()
+tamagotchi.changeDrink()
+tamagotchi.changeSleep()
+tamagotchi.changeWalk()
 
-document.getElementById("b_health").onclick = tamagotchi.getHealth;
-document.getElementById("b_meals").onclick = tamagotchi.getMeals;
-document.getElementById("b_drink").onclick = tamagotchi.getDrink;
-document.getElementById("b_sleep").onclick = tamagotchi.getSleep
-document.getElementById("b_walk").onclick = tamagotchi.getWalk
+document.getElementById("get-health").onclick = tamagotchi.getHealth
+document.getElementById("get-meals").onclick = tamagotchi.getMeals
+document.getElementById("get-drink").onclick = tamagotchi.getDrink
+document.getElementById("get-sleep").onclick = tamagotchi.getSleep
+document.getElementById("get-walk").onclick = tamagotchi.getWalk
