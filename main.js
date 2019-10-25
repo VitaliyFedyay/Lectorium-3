@@ -29,6 +29,8 @@ class Animal {
     else if (progress.value == 0) {
       info.innerHTML = 'Tamagotchi is died!'
       document.getElementById('img').style.visibility = 'hidden'
+      let audio = new Audio('./audio/doh.wav')
+      setTimeout(audio.play(), 1000) 
     }
 
     progress.value--
