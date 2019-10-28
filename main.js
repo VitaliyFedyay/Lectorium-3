@@ -27,7 +27,7 @@ class Animal {
       info.innerHTML = "Tamagotchi is not hungry!"
     } else if (progress.value == 50) {
       info.innerHTML = "Tamagotchi is hungry!"
-    } else if (progress.value == 0) {
+    } else if (progress.value == 10) {
       info.innerHTML = "Tamagotchi is dying!"
     }
 
@@ -43,7 +43,7 @@ class Animal {
       info.innerHTML = "Tamagotchi is not thirsty!"
     } else if (progress.value == 50) {
       info.innerHTML = "Tamagotchi wants to drink!"
-    } else if (progress.value == 0) {
+    } else if (progress.value == 10) {
       info.innerHTML = "Tamagotchi is dying!"
     }
 
@@ -59,7 +59,7 @@ class Animal {
       info.innerHTML = "Tamagotchi does not want to sleep!"
     } else if (progress.value == 50) {
       info.innerHTML = "Tamagotchi wants to sleep!"
-    } else if (progress.value == 0) {
+    } else if (progress.value == 10) {
       info.innerHTML = "Tamagotchi is dying!"
     }
 
@@ -75,7 +75,7 @@ class Animal {
       info.innerHTML = "Tamagotchi does not want to walk!"
     } else if (progress.value == 50) {
       info.innerHTML = "Tamagotchi needs walk!"
-    } else if (progress.value == 0) {
+    } else if (progress.value == 10) {
       info.innerHTML = "Tamagotchi is dying!"
     }
 
@@ -147,13 +147,15 @@ class Animal {
   }
 }
 
-window.onload = function() {
+window.onload = function () {
+
   let check = true
   while (check) {
     let name = prompt("Enter name of your tamagotchi: ")
     if (name !== null && name !== "") {
       check = false
       document.getElementById("tamagotchiName").innerHTML = name
+      document.getElementById("img").style.visibility = "visible"
     } else {
       check = true
     }

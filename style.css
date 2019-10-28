@@ -1,7 +1,8 @@
 body {
   background: linear-gradient(to right, rgb(184, 49, 184), rgb(35, 48, 240));
-  font-family: "Pacifico", cursive;
+  font-family: "Times New Roman", Times, serif;
 }
+
 #tamagotchiName {
   text-align: center;
   margin: 0 auto;
@@ -39,7 +40,6 @@ body {
   height: 5vh;
   background: rgb(57, 171, 175);
   font-size: 1em;
-  font-family: "Pacifico", cursive;
   text-align: center;
 }
 
@@ -62,7 +62,7 @@ body {
 .tamagotchiImg img {
   width: 100%;
   height: auto;
-  visibility: visible;
+  visibility: hidden;
 }
 
 .information {
@@ -99,5 +99,4 @@ body {
   background: crimson;
   outline: none;
   font-size: 1.5em;
-  font-family: "Pacifico", cursive;
 }
