@@ -145,6 +145,7 @@ class Animal {
       document.getElementById("sec").innerHTML = timer
     }, 1000)
   }
+
 }
 
 window.onload = function () {
@@ -164,6 +165,7 @@ window.onload = function () {
 const tamagotchi = new Animal(infoHealth, infoMeals, infoDrink, infoSleep, infoWalk, health, meals, drink, sleep, walk)
 
 tamagotchi.timer()
+
 
 tamagotchi.changeHealth()
 tamagotchi.changeMeals()
